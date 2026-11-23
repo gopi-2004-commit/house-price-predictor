@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>House price predictor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>House price predictor</h1>
+  <p class="sub">Enter the property details, then press Predict price.</p>
+
+  <div class="grid">
+    <form class="panel" id="form" novalidate>
+      <h2>Property details</h2>
+      <div id="error" class="msg err" role="alert" hidden></div>
+
+      <div class="f"><label for="locality">Locality</label><select id="locality" required></select></div>
+      <div class="f"><label for="area_sqft">Built-up area (sq ft) <span class="hint" id="h_area"></span></label>
+        <input id="area_sqft" type="number" inputmode="numeric" required></div>
+      <div class="pair">
+        <div class="f"><label for="bedrooms">Bedrooms <span class="hint" id="h_bed"></span></label><input id="bedrooms" type="number" inputmode="numeric" required></div>
+        <div class="f"><label for="bathrooms">Bathrooms <span class="hint" id="h_bath"></span></label><input id="bathrooms" type="number" inputmode="numeric" required></div>
+      </div>
+      <div class="f"><label for="age_years">Age of building (years) <span class="hint" id="h_age"></span></label>
+        <input id="age_years" type="number" inputmode="numeric" required></div>
+      <div class="pair">
+        <div class="f"><label for="furnishing">Furnishing</label>
+          <select id="furnishing"><option value="0">Unfurnished</option><option value="1">Semi-furnished</option><option value="2">Fully furnished</option></select></div>
+        <div class="f"><label for="parking">Parking</label>
+          <select id="parking"><option value="0">No</option><option value="1">Yes</option></select></div>
+      </div>
+      <div class="btns">
+        <button class="primary" id="go" type="submit">Predict price</button>
+        <button class="ghost" id="reset" type="button">Reset</button>
+      </div>
+    </form>
+
+    <div id="out" aria-live="polite">
+      <div class="panel empty">Your estimate will appear here.</div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
